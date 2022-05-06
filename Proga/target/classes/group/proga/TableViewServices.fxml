@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.proga.TableViewServicesController">
+   <children>
+      <AnchorPane fx:id="mainMenuAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="217.0" />
+      <AnchorPane fx:id="mainMenuAnchorPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="217.0">
+         <children>
+            <MenuBar fx:id="mainMenuBar" layoutX="8.0" layoutY="7.0">
+              <menus>
+                <Menu fx:id="CatalogsMenu" mnemonicParsing="false" text="Спарвочники">
+                  <items>
+                    <MenuItem fx:id="PupilsMenuItem" mnemonicParsing="false" onAction="#openCurrentPupilsTable" text="Ученики" />
+                        <MenuItem fx:id="FormerPupilsMenuItem" mnemonicParsing="false" onAction="#openFoprmerPupilsTable" text="Бывшие ученики" />
+                        <MenuItem fx:id="EmployeesMenuItem" mnemonicParsing="false" onAction="#openEmployeesTable" text="Работники" />
+                        <MenuItem fx:id="ClassMenuItem" mnemonicParsing="false" onAction="#openClassesTable" text="Класс" />
+                        <MenuItem fx:id="SubjectsMenuItem" mnemonicParsing="false" onAction="#openSubjectsTable" text="Предметы" />
+                        <MenuItem fx:id="HourlyStudiosMenuItem" mnemonicParsing="false" onAction="#openHourlyStudiosTable" text="Часовые студии" />
+                        <MenuItem fx:id="GroupStudiosMenuItem" mnemonicParsing="false" onAction="#openGroupStudiosTable" text="Групповые студии" />
+                        <MenuItem fx:id="ServicesMenuItem" mnemonicParsing="false" onAction="#openServicesTable" text="Услуги" />
+                        <MenuItem fx:id="CalendarMenuItem" mnemonicParsing="false" onAction="#openCalendar" text="Календарь" />
+                  </items>
+                </Menu>
+                <Menu fx:id="TablesMenu" mnemonicParsing="false" text="Таблицы">
+                  <items>
+                    <MenuItem fx:id="OpenNewTablesMenuItem" mnemonicParsing="false" onAction="#openNewAccountantTables" text="Открыть новые" />
+                        <MenuItem fx:id="ExportTableMenuItem" mnemonicParsing="false" onAction="#openExportTable" text="Экспортировать таблицу" />
+                        <MenuItem fx:id="OpenOldMenuItem" mnemonicParsing="false" onAction="#openOldAccountantTable" text="Открыть" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="ServicesTableView" layoutX="9.0" layoutY="46.0" prefHeight="350.0" prefWidth="586.0">
+        <columns>
+          <TableColumn fx:id="idService_invisColumn" prefWidth="75.0" text="id_service" visible="false" />
+            <TableColumn fx:id="service_TickColumn" prefWidth="88.0" text="Выбрать" />
+          <TableColumn fx:id="service_NameColumn" prefWidth="414.4000244140625" text="Название" />
+        </columns>
+      </TableView>
+      <Button fx:id="DeleteServiceButton" layoutX="249.0" layoutY="4.0" mnemonicParsing="false" onAction="#deleteService" text="Удалить" />
+      <Button fx:id="editServiceButton" layoutX="361.0" layoutY="4.0" mnemonicParsing="false" onAction="#editService" text="Редактировать" />
+      <Button fx:id="NewServiceButton" layoutX="504.0" layoutY="4.0" mnemonicParsing="false" onAction="#createNewService" text="Новый" />
+   </children>
+</AnchorPane>

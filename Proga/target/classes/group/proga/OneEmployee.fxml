@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="915.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.proga.OneEmployeeController">
+   <children>
+      <Label fx:id="emplNameLabel" layoutX="26.0" layoutY="34.0" text="Имя*" />
+      <TextField fx:id="emplNameTextField" layoutX="121.0" layoutY="29.0" prefHeight="32.0" prefWidth="278.0" promptText="Имя" />
+      <Label fx:id="emplSurnameLabel" layoutX="27.0" layoutY="80.0" text="Фамилия*" />
+      <TextField fx:id="emplSurnameTextField" layoutX="121.0" layoutY="75.0" prefHeight="32.0" prefWidth="278.0" promptText="Фамилия" />
+      <Label fx:id="emplIsTeacherLabel" layoutX="453.0" layoutY="80.0" text="Учитель*" />
+      <RadioButton fx:id="empl_isTeacherRadioButton" layoutX="557.0" layoutY="80.0" mnemonicParsing="false" selected="true" text="да">
+         <toggleGroup>
+            <ToggleGroup fx:id="teacherToggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="empl_NOTaTeacherRadioButton" layoutX="665.0" layoutY="80.0" mnemonicParsing="false" text="нет" toggleGroup="$teacherToggleGroup" />
+      <Label fx:id="emplStatussLabel" layoutX="453.0" layoutY="34.0" text="Статус" />
+      <ChoiceBox fx:id="emplStatussChoiceBox" layoutX="515.0" layoutY="29.0" prefHeight="32.0" prefWidth="277.0" />
+      <Button fx:id="buttonCancelOneEmpl" layoutX="213.0" layoutY="861.0" mnemonicParsing="false" onAction="#cancelOneEmpl" text="Отмена" />
+      <Button fx:id="buttonSaveOneEmpl" layoutX="483.0" layoutY="861.0" mnemonicParsing="false" onAction="#saveOneEmpl" text="Сохранить" />
+      <Accordion layoutX="29.0" layoutY="197.0" prefHeight="641.0" prefWidth="760.0">
+        <panes>
+          <TitledPane fx:id="emplHomeroom_TitledPane" animated="false" text="Классный руководитель">
+               <content>
+                  <TableView fx:id="emplHomeroom_TableView" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="emplClassID_invColumn" prefWidth="75.0" text="class_id" visible="false" />
+                      <TableColumn fx:id="emplClass_TickColumn" prefWidth="95.20003509521484" text="Выбрать" />
+                        <TableColumn fx:id="emplClass_name" prefWidth="588.0000457763672" text="Класс" />
+                    </columns>
+                  </TableView>
+               </content>
+          </TitledPane>
+          <TitledPane fx:id="emplSubject_TitledPane" animated="false" text="Преподает предметы">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="emplSubject_TableView" layoutX="2.0" prefHeight="544.0" prefWidth="750.0">
+                          <columns>
+                            <TableColumn fx:id="emplSubjectID_invColumn" prefWidth="75.0" text="subj_id" visible="false" />
+                            <TableColumn fx:id="emplSubject_TickColumn" prefWidth="105.59993743896484" text="Выбрать" />
+                              <TableColumn fx:id="emplSubject_nameColumn" prefWidth="498.40000915527344" text="Предмет" />
+                              <TableColumn fx:id="emplSubject_paymentColumn" prefWidth="144.0" text="Оплата" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane fx:id="emplGStudio_TitledPane" animated="false" text="Групповые студии">
+            <content>
+              <AnchorPane fx:id="emplGStudio_AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="emplGStudio_TableView" layoutX="2.0" layoutY="1.0" prefHeight="478.0" prefWidth="754.0">
+                          <columns>
+                            <TableColumn fx:id="emplGStudioID_invColumn" prefWidth="75.0" text="gstudio_id" visible="false" />
+                            <TableColumn fx:id="emplGStudio_TickColumn" prefWidth="105.59999537467957" text="Выбрать" />
+                              <TableColumn fx:id="emplGstudio_nameColumn" prefWidth="489.60008239746094" text="Название" />
+                              <TableColumn fx:id="emplGStudio_paymentColumn" prefWidth="228.0" text="Оплата" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+            <TitledPane fx:id="emplHstudio_TitledPane" animated="false" text="Часовые студии">
+              <content>
+                <AnchorPane fx:id="emplHStudio_AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="emplHStudio_TableView" prefHeight="478.0" prefWidth="760.0">
+                          <columns>
+                            <TableColumn fx:id="emplHStudioID_invColumn" prefWidth="75.0" text="gstudio_id" visible="false" />
+                            <TableColumn fx:id="emplHStudio_TickColumn" prefWidth="75.0" text="Выбрать" />
+                              <TableColumn fx:id="emplHStudio_nameColumn" prefWidth="516.7999954223633" text="Название" />
+                              <TableColumn fx:id="emplHStudio_paymentColumn" prefWidth="234.4000244140625" text="Оплата" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane fx:id="emplServis_TitledPane" animated="false" text="Услуги">
+              <content>
+                <AnchorPane fx:id="emplServis_AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="emplServiss_TableView" prefHeight="479.0" prefWidth="760.0">
+                          <columns>
+                            <TableColumn fx:id="emplServisID_invColumn" prefWidth="75.0" text="servis_id" visible="false" />
+                            <TableColumn fx:id="emplServis_TickColumn" prefWidth="88.7999866604805" text="Выбрать" />
+                              <TableColumn fx:id="emplServis_nameColumn" prefWidth="495.2000503540039" text="Название" />
+                              <TableColumn fx:id="emplService_paymentColumn" prefWidth="242.39996337890625" text="Оплата" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+      <Button fx:id="buttonCancelOneEmpl1" layoutX="213.0" layoutY="141.0" mnemonicParsing="false" onAction="#cancelOneEmpl" text="Отмена" />
+      <Button fx:id="buttonSaveOneEmpl1" layoutX="483.0" layoutY="141.0" mnemonicParsing="false" onAction="#saveOneEmpl" text="Сохранить" />
+   </children>
+</AnchorPane>

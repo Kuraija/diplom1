@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group.proga.TableViewEmployeesController">
+   <children>
+      <AnchorPane fx:id="mainMenuAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="217.0">
+         <children>
+            <MenuBar fx:id="mainMenuBar" layoutX="8.0" layoutY="7.0">
+              <menus>
+                <Menu fx:id="CatalogsMenu" mnemonicParsing="false" text="Спарвочники">
+                  <items>
+                    <MenuItem fx:id="PupilsMenuItem" mnemonicParsing="false" onAction="#openCurrentPupilsTable" text="Ученики" />
+                        <MenuItem fx:id="FormerPupilsMenuItem" mnemonicParsing="false" onAction="#openFoprmerPupilsTable" text="Бывшие ученики" />
+                        <MenuItem fx:id="EmployeesMenuItem" mnemonicParsing="false" onAction="#openEmployeesTable" text="Работники" />
+                        <MenuItem fx:id="SubjectsMenuItem" mnemonicParsing="false" onAction="#openSubjectsTable" text="Предметы" />
+                        <MenuItem fx:id="ClassMenuItem" mnemonicParsing="false" onAction="#openClassesTable" text="Класс" />
+                        <MenuItem fx:id="CalendarMenuItem" mnemonicParsing="false" onAction="#openCalendar" text="Календарь" />
+                  </items>
+                </Menu>
+                <Menu fx:id="TablesMenu" mnemonicParsing="false" text="Таблицы">
+                  <items>
+                    <MenuItem fx:id="OpenNewTablesMenuItem" mnemonicParsing="false" onAction="#openNewAccountantTables" text="Открыть новые" />
+                        <MenuItem fx:id="ExportTableMenuItem" mnemonicParsing="false" onAction="#openExportTable" text="Экспортировать таблицу" />
+                        <MenuItem fx:id="OpenOldMenuItem" mnemonicParsing="false" onAction="#openOldAccountantTable" text="Открыть" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+      <Button fx:id="DeleteButton" layoutX="257.0" layoutY="14.0" mnemonicParsing="false" onAction="#DeleteThisEmployeeFromDB" text="Удалить" />
+      <Button fx:id="EditButton" layoutX="349.0" layoutY="14.0" mnemonicParsing="false" onAction="#EditThisEmployee" text="Редактировать" />
+      <Button fx:id="NewEmployeeButton" layoutX="493.0" layoutY="14.0" mnemonicParsing="false" onAction="#createNewEmployee" text="Новый" />
+      <TableView fx:id="EmployeeListTableView" layoutX="9.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="50.0">
+        <columns>
+            <TableColumn fx:id="employeeID_invisbl_Column" prefWidth="75.0" text="EmployeeID" visible="false" />
+            <TableColumn fx:id="tickColumn" prefWidth="75.0" text="Выбрать" />
+            <TableColumn fx:id="employeeSurnameColumn" prefWidth="230.4000244140625" text="Фамилия" />
+          <TableColumn fx:id="employeeNameColumn" minWidth="0.0" prefWidth="261.6000518798828" text="Имя" />
+          <TableColumn fx:id="employeeStatussColumn" prefWidth="231.199951171875" text="Статус" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
